@@ -1,0 +1,7 @@
+{
+  "name": "Sweetapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
