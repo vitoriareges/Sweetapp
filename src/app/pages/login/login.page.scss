@@ -1,0 +1,64 @@
+
+.ion-slides{
+    height: 100%;
+    .slide-inner{
+        width: 75%;
+        color:white;
+        background-color: rgb(248, 181, 181);
+        border-radius: 10px;
+    }
+    .span  {
+        
+        color: rgb(248, 181, 181);
+    }
+}
+.segment{
+    width: 75%;
+    color:white;
+    background-color: rgb(248, 181, 181);
+    border-radius: 10px;
+}
+.top{
+    position : absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 44%;
+   
+}
+
+.loginbox{
+    
+    left: 0;
+    right: 0;
+   
+    height: 95%;
+}
+.p{
+    color:"white";
+}
+.bottom{
+    position : absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10%;
+    background: rgb(248, 181, 181);
+
+    .container-bottom{
+        text-align: center;
+        height: 10%;;
+        top: -100px
+        
+    }
+    .span   {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 70%;
+        color: white;
+
+    }
+    
+}

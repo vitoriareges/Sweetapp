@@ -1,0 +1,61 @@
+<ion-content class="swiper-no-swiping" >
+  <div class = "top">
+    <div>
+      <p align="center">
+      <img src="assets\img\logotipo.png"  width="170" height="170" alt="Sweet Dreams">
+      </p>
+    </div>
+  </div>
+  <ion-segment (ionChange)="segmentChanged($event)" value = "login">
+    <ion-segment-button value="login">
+      <ion-label>Login</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="register">
+      <ion-label>Create Account</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+    <ion-slides>
+      <ion-slide>
+        <div class="slide-inner ion-padding">
+          <span>Login</span>
+        <ion-item class = "ion-margin-top" lines="none">
+          <ion-input type ="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+        </ion-item>
+        <ion-item class = "ion-margin-top" lines="none">
+          <ion-input type ="password" placeholder="Password" [(ngModel)]="userLogin.password"></ion-input>
+        </ion-item>
+        <ion-button class = "ion-margin-top" (click)="login()" color ="primary" expand = "block">
+          Login
+        </ion-button>
+      </div>
+       </ion-slide>
+   
+       <ion-slide>
+        <div class="slide-inner ion-padding">
+          <span>Create Account</span>
+          <ion-item class = "ion-margin-top" lines="none">
+            <ion-input type ="name" placeholder="Name"></ion-input>
+          </ion-item>
+        <ion-item class = "ion-margin-top" lines="none">
+          <ion-input type ="email" placeholder="E-mail" [(ngModel)]="userRegister.email" ></ion-input>
+        </ion-item>
+        <ion-item class = "ion-margin-top" lines="none">
+          <ion-input type ="password" placeholder="Password" [(ngModel)]="userRegister.password"></ion-input>
+        </ion-item>
+        <ion-button class = "ion-margin-top" (click)="register()" color ="primary" expand = "block">
+          Create
+        </ion-button>
+      </div>
+       </ion-slide>
+   
+    </ion-slides>
+  
+  <div class = "bottom" >
+
+    <div class = container-bottom  >
+      <p>Your Favourite Brazilian Bakery in Dublin</p>
+    </div>
+
+  </div>
+
+</ion-content>

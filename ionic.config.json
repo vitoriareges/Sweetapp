@@ -1,7 +1,8 @@
 {
   "name": "Sweetapp",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
