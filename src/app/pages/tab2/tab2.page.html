@@ -3,31 +3,33 @@
   <ion-title>
   <div class="hcs">
     <img src="assets\img\logotipo.png"  width="40" height="40" alt="Sweet Dreams"> 
-   <h3>  Menu</h3>
+   <h3>My Account</h3>
   </div>
   </ion-title>
   </ion-toolbar>
   </ion-header>
 <ion-content>
   <ion-list>
-    <ion-item-sliding *ngFor="let product of listproducts">
+    <ion-item *ngFor="let profile of listprofiles">
       <ion-item >
-        <ion-avatar slot="start">
-          <img [src]="product.picture">
-        </ion-avatar>
-
+       
         <ion-label>
-          {{ product.type }}
-          <p>{{ product.name }}</p>
-          <p>{{ product.description }}</p>
+          {{ profile.name }} {{ profile.lastname }}
+          <p>{{ profile.phone }}</p>
+          <p>{{ profile.address }}</p>
         </ion-label>
-
-        <ion-note color="secondary" slot="end" *ngIf="product.price">{{ product.price | currency: 'EUR' }}</ion-note>
       </ion-item>
-</ion-item-sliding>
+</ion-item>
 </ion-list>
 </ion-content>
-
+<ion-content>
+<ion-button color ="secondary" (click)="profile()" expand="block">
+  Manage Account
+</ion-button>
+<ion-button color ="danger" (click)="logout()" expand="block">
+ Logout
+</ion-button>
+</ion-content>
 <ion-tabs>
 
   <ion-tab-bar slot="bottom" color="primary">
@@ -48,3 +50,5 @@
   </ion-tab-bar>
 
 </ion-tabs>
+
+  

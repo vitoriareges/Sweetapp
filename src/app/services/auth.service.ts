@@ -10,19 +10,26 @@ export class AuthService {
   constructor(private afa: AngularFireAuth) { }
 
   login(user: User){
-    return this.afa.signInWithEmailAndPassword(user.email, user.password);
+    return this.afa.signInWithEmailAndPassword(user.email, user.password); // Method from firebase
   }
 
   register(user: User){
-    return this.afa.createUserWithEmailAndPassword(user.email, user.password);
+    return this.afa.createUserWithEmailAndPassword(user.email, user.password); // Method from firebase
   }
 
-  logout(){
+  getPassword(user: User){
+return this.afa.sendPasswordResetEmail(user.email); // method to resend passowrd
+  }
+
+  logout(user: User){
+    return this.afa.signOut(); // Method from firebase
 
   }
 
   getAuth() {
-    this.afa;
+    return this.afa; // Method from firebase to check function once authentication is done
 
   }
+
+
 }

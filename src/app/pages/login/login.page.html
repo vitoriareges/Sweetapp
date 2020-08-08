@@ -27,6 +27,9 @@
         <ion-button class = "ion-margin-top" (click)="login()" color ="primary" expand = "block">
           Login
         </ion-button>
+        <ion-button class = "ion-margin-top" (click)="forgot()" color ="primary" expand = "block">
+         Forgot Password?
+        </ion-button>
       </div>
        </ion-slide>
    
@@ -34,7 +37,7 @@
         <div class="slide-inner ion-padding">
           <span>Create Account</span>
           <ion-item class = "ion-margin-top" lines="none">
-            <ion-input type ="name" placeholder="Name"></ion-input>
+            <ion-input type ="name" placeholder="Name" ></ion-input>
           </ion-item>
         <ion-item class = "ion-margin-top" lines="none">
           <ion-input type ="email" placeholder="E-mail" [(ngModel)]="userRegister.email" ></ion-input>

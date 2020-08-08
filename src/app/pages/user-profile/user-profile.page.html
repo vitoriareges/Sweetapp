@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-title>
+  <div class="hcs">
+    <img src="assets\img\logotipo.png"  width="40" height="40" alt="Sweet Dreams"> 
+   <h2> Create My Account</h2>
+  </div>
+  </ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-title> My Account </ion-title>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="profile.name" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="profile.lastname" placeholder="Surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="profile.address" placeholder="Address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="profile.phone" placeholder="Mobile Phone"></ion-input>
+    </ion-item>
+    <ion-button color ="secondary" (click)="createAccount()" expand="block">
+      Create Account
+    </ion-button>
+  </ion-list>
+
+ 
+</ion-content>
+
+

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-title>
+  <div class="hcs">
+    <img src="assets\img\logotipo.png"  width="40" height="40" alt="Sweet Dreams"> 
+   <h2> Sweet Dreams CRUD Page</h2>
+  </div>
+  </ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-title> Create Product </ion-title>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="product.name" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="product.type" placeholder="Type"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="product.description" placeholder="Description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="product.picture" placeholder="Image"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="product.price" placeholder="Price"></ion-input>
+    </ion-item>
+    <ion-button color ="secondary" (click)="createProduct()" expand="block">
+      Create
+    </ion-button>
+    <ion-button color ="secondary" [routerLink]="['/home']" expand="block">
+      Home Page
+    </ion-button>
+  </ion-list>
+
+  <ion-list>
+    <ion-title> Manage Products </ion-title>
+    <ion-item-sliding *ngFor="let product of listproducts">
+      <ion-item button [routerLink]="['/crud', product.id]">
+        <ion-avatar slot="start">
+          <img [src]="product.picture">
+        </ion-avatar>
+
+        <ion-label>
+          {{ product.type }}
+          <p>{{ product.name }}</p>
+          <p>{{ product.description }}</p>
+        </ion-label>
+
+        <ion-note color="secondary" slot="end" *ngIf="product.price">{{ product.price | currency: 'EUR' }}</ion-note>
+      </ion-item>
+
+  <ion-item-options side="end">
+    <ion-item-option color="secondary" (click)="deleteProduct(product.id)">
+      <ion-icon slot="top" name="trash"></ion-icon>
+      Delete Product
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
+</ion-list>
+</ion-content>
+
