@@ -42,7 +42,7 @@
       </ion-item>
 
   <ion-item-options side="end">
-    <ion-item-option color="secondary" (click)="addCart()(product.id)">
+    <ion-item-option color="secondary" (click)="addCart(product.picture, product.type, product.name, product.price)">
       <ion-icon slot="top" name="trash"></ion-icon>
       Add to cart
     </ion-item-option>

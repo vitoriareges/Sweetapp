@@ -85,8 +85,18 @@
 </div>
 </ion-slide>
 </ion-slides>
+<ion-fab vertical="bottom" horizontal="end" edge slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="start">
+    <ion-fab-button><ion-icon [routerLink]="['/home']" name="list-circle-outline"></ion-icon></ion-fab-button>
+    <ion-fab-button><ion-icon [routerLink]="['/tab2']" name="person-outline"></ion-icon></ion-fab-button>
+
+  </ion-fab-list>
+</ion-fab>
 </ion-content>
- 
+  
 <footer>
   <ion-toolbar color="primary">
    
