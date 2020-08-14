@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
   private listproducts = new Array<Product>();
   private pSubscription: Subscription;
 
-
+ 
   constructor(private pService: ProductService) {
     this.pSubscription = this.pService.readProducts().subscribe(data => {
       this.listproducts = data;
@@ -24,5 +24,8 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
+addCart(){
 
+
+}
 }

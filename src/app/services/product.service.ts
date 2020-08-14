@@ -45,6 +45,7 @@ readProductsId(id: string){
 
 updateProduct(id: string , product: Product){
   return this.pCollection.doc<Product>(id).update(product);
+
 }
 
 deleteProduct(id: string){

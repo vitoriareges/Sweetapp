@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   LoadingController,
   ToastController,
   NavController,
+  IonSlides,
 } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -16,6 +17,7 @@ import { Product } from 'src/app/interfaces/product';
   styleUrls: ['./crud.page.scss'],
 })
 export class CrudPage implements OnInit {
+  @ViewChild(IonSlides) slides: IonSlides;
   private loading: any;
   private listproducts = new Array<Product>();
   private pSubscription: Subscription;
@@ -23,6 +25,7 @@ export class CrudPage implements OnInit {
   public product: Product = {};
 
   constructor(
+
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private route: Router,
@@ -37,6 +40,14 @@ export class CrudPage implements OnInit {
     this.productId = this.activatedRoute.snapshot.params.id; // list id for products
 
     if (this.productId) {this.loadProduct(); }
+  }
+
+  segmentChanged(event: any) {
+    if (event.detail.value === 'create'){
+      this.slides.slidePrev();
+    } else {
+      this.slides.slideNext();
+    }
   }
 
   loadProduct() {

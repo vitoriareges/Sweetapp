@@ -1,14 +1,14 @@
 import { Profile } from './../../interfaces/profile';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoadingController, NavController, ToastController } from '@ionic/angular';
 import { User } from 'src/app/interfaces/user';
 import { Subscription } from 'rxjs';
 import { ProfileService } from 'src/app/services/profile.service';
 import { ViewChild } from '@angular/core';
 
-
+ 
 @Component({
   selector: 'app-tab2',
   templateUrl: './tab2.page.html',
@@ -20,6 +20,9 @@ export class Tab2Page implements OnInit {
   public loading: any;
   private listprofiles = new Array<Profile>();
   private pSubscription: Subscription;
+  private activatedRoute: ActivatedRoute;
+  private navCtrl: NavController;
+
 
   constructor(private loadingCtrl: LoadingController,
               private toastCtrl: ToastController,
@@ -29,7 +32,8 @@ export class Tab2Page implements OnInit {
                 this.pSubscription = this.pService.readProfiles().subscribe(data => {
                   this.listprofiles = data;
                 });
-               }
+                
+               } 
 
     profile() {
       this.route.navigate(['/user-profile']);

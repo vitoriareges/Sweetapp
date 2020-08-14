@@ -3,13 +3,29 @@
   <ion-title>
   <div class="hcs">
     <img src="assets\img\logotipo.png"  width="40" height="40" alt="Sweet Dreams"> 
-   <h3>  Menu</h3>
+   <h2> Menu</h2>
   </div>
   </ion-title>
   </ion-toolbar>
   </ion-header>
+
 <ion-content>
+  
+  <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
+  <ion-fab vertical="bottom" horizontal="end" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button><ion-icon [routerLink]="['/tab1']" name="cart-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button><ion-icon [routerLink]="['/tab2']" name="person-outline"></ion-icon></ion-fab-button>
+
+    </ion-fab-list>
+  </ion-fab>
+
   <ion-list>
+    
+   
     <ion-item-sliding *ngFor="let product of listproducts">
       <ion-item >
         <ion-avatar slot="start">
@@ -24,27 +40,20 @@
 
         <ion-note color="secondary" slot="end" *ngIf="product.price">{{ product.price | currency: 'EUR' }}</ion-note>
       </ion-item>
+
+  <ion-item-options side="end">
+    <ion-item-option color="secondary" (click)="addCart()(product.id)">
+      <ion-icon slot="top" name="trash"></ion-icon>
+      Add to cart
+    </ion-item-option>
+  </ion-item-options>
 </ion-item-sliding>
 </ion-list>
 </ion-content>
 
-<ion-tabs>
+<footer>
+  <ion-toolbar color="primary">
+   
+    </ion-toolbar>
+</footer>
 
-  <ion-tab-bar slot="bottom" color="primary">
-    <ion-tab-button [routerLink]="['/home']">
-      <ion-icon name="list-circle-outline"></ion-icon>
-      <ion-label>Menu</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button [routerLink]="['/tab1']">
-      <ion-icon name="cart-outline"></ion-icon>
-      <ion-label>Cart</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button [routerLink]="['/tab2'] ">
-      <ion-icon name="person-outline"></ion-icon>
-      <ion-label>My account</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
-</ion-tabs>
