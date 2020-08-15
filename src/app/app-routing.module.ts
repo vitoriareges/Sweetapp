@@ -20,15 +20,15 @@ const routes: Routes = [
   },
   {
     path: 'tab1',
-    loadChildren: () => import('./pages/tab1/tab1.module').then( m => m.Tab1PageModule)
+    loadChildren: () => import('./pages/tab1/tab1.module').then( m => m.Tab1PageModule), canActivate: [AuthGuard]
   },
   {
     path: 'tab2',
-    loadChildren: () => import('./pages/tab2/tab2.module').then( m => m.Tab2PageModule)
+    loadChildren: () => import('./pages/tab2/tab2.module').then( m => m.Tab2PageModule), canActivate: [AuthGuard]
   },
   {
     path: 'crud',
-    loadChildren: () => import('./pages/crud/crud.module').then( m => m.CrudPageModule)
+    loadChildren: () => import('./pages/crud/crud.module').then( m => m.CrudPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'crud/:id',
@@ -36,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'user-profile',
-    loadChildren: () => import('./pages/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
+    loadChildren: () => import('./pages/user-profile/user-profile.module').then( m => m.UserProfilePageModule),canActivate: [AuthGuard]
   }
 ];
 
